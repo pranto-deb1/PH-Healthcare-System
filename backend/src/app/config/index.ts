@@ -15,4 +15,7 @@ export default {
 	jwt_access_expires_in: process.env.JWT_ACCESS_EXPIRES_IN as string,
 	jwt_refresh_expires_in: process.env.JWT_REFRESH_EXPIRES_IN as string,
 	google_client_id: process.env.GOOGLE_CLIENT_ID as string,
+	super_admin_name: process.env.SUPER_ADMIN_NAME as string,
+	super_admin_email: process.env.SUPER_ADMIN_EMAIL as string,
+	super_admin_password: process.env.SUPER_ADMIN_PASSWORD as string
 };
