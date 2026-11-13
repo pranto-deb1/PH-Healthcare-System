@@ -17,5 +17,11 @@ export default {
 	google_client_id: process.env.GOOGLE_CLIENT_ID as string,
 	super_admin_name: process.env.SUPER_ADMIN_NAME as string,
 	super_admin_email: process.env.SUPER_ADMIN_EMAIL as string,
-	super_admin_password: process.env.SUPER_ADMIN_PASSWORD as string
+	super_admin_password: process.env.SUPER_ADMIN_PASSWORD as string,
+	test_admin_name: process.env.TEST_ADMIN_NAME as string,
+	test_admin_email: process.env.TEST_ADMIN_EMAIL as string,
+	test_admin_password: process.env.TEST_ADMIN_PASSWORD as string,
+	test_doctor_name: process.env.TEST_DOCTOR_NAME as string,
+	test_doctor_email: process.env.TEST_DOCTOR_EMAIL as string,
+	test_doctor_password: process.env.TEST_DOCTOR_PASSWORD as string,
 };
