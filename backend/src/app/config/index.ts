@@ -24,4 +24,10 @@ export default {
 	test_doctor_name: process.env.TEST_DOCTOR_NAME as string,
 	test_doctor_email: process.env.TEST_DOCTOR_EMAIL as string,
 	test_doctor_password: process.env.TEST_DOCTOR_PASSWORD as string,
+	redis_user: process.env.REDIS_USER as string,
+	redis_password: process.env.REDIS_PASSWORD as string,
+	redis_host: process.env.REDIS_HOST as string,
+	redis_port: process.env.REDIS_PORT as string,
+	smtp_user: process.env.SMTP_USER as string,
+	smtp_password: process.env.SMTP_PASSWORD as string,
 };

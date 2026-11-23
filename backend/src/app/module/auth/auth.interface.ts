@@ -26,3 +26,13 @@ export interface IUpdateUserPayload {
 	email?: string;
 	name?: string;
 }
+
+export interface IForgotPasswordPayload {
+	email: string;
+}
+
+export interface IResetPassword {
+	email: string;
+	otp: string;
+	newPassword: string;
+}
