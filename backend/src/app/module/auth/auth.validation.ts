@@ -48,9 +48,15 @@ const zodResetPasswordSchema = z.object({
 		),
 });
 
+const zodVerifyUserPayload = z.object({
+	email: z.email(),
+	otp: z.string().length(6, "OTP must contain at least 6 digits"),
+});
+
 export const authValidation = {
 	zodPatientRegisterSchema,
 	zodLoginSchema,
 	zodForgotPasswordSchema,
 	zodResetPasswordSchema,
+	zodVerifyUserPayload,
 };

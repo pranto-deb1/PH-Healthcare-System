@@ -36,4 +36,10 @@ router.post(
 	AuthController.resetPassword,
 );
 
+router.post(
+	"/verify-user",
+	validateSchema(authValidation.zodVerifyUserPayload),
+	AuthController.verifyUser,
+);
+
 export const AuthRoutes = router;

@@ -9,6 +9,17 @@ const registerPatient = catchAsync(async (req: Request, res: Response) => {
 	const payload = req.body;
 	const result = await AuthService.registerPatient(payload);
 
+	sendResponse(res, {
+		statusCode: httpStatus.OK,
+		success: true,
+		message: "Verification OTP send to your email",
+		data: null,
+	});
+});
+
+const verifyUser = catchAsync(async (req: Request, res: Response) => {
+	const result = await AuthService.verifyUser(req.body);
+
 	const { accessToken, refreshToken, user, patient } = result;
 
 	res.cookie("accessToken", accessToken, {
@@ -17,6 +28,7 @@ const registerPatient = catchAsync(async (req: Request, res: Response) => {
 		sameSite: "none",
 		maxAge: 1000 * 60 * 60 * 24, // 24 hour or 1 day
 	});
+
 	res.cookie("refreshToken", refreshToken, {
 		httpOnly: true,
 		secure: false,
@@ -29,10 +41,10 @@ const registerPatient = catchAsync(async (req: Request, res: Response) => {
 		success: true,
 		message: "Patient registered successfully",
 		data: {
-			accessToken,
-			refreshToken,
 			user,
 			patient,
+			accessToken,
+			refreshToken,
 		},
 	});
 });
@@ -174,4 +186,5 @@ export const AuthController = {
 	googleLogin,
 	forgotPassword,
 	resetPassword,
+	verifyUser,
 };
